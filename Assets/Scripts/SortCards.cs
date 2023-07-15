@@ -8,6 +8,7 @@ public class SortCards : MonoBehaviour
     public GameObject[] prefabsOriginais; // Array com os prefabs originais
     public int[] imagensRecebidas;
     private List<GameObject> cartas; // Lista para armazenar as cartas
+    
 
     private void Start()
     {

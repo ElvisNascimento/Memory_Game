@@ -6,6 +6,9 @@ public class MatchController : MonoBehaviour
 {
     public CardChange selectedCard1;
     public CardChange selectedCard2;
+    public AudioSource audioSource;
+    public AudioClip nice;
+    public AudioClip erro;
 
     private bool isProcessing = false;
 
@@ -35,11 +38,13 @@ public class MatchController : MonoBehaviour
 
         if (selectedCard1.GetCardName() == selectedCard2.GetCardName())
         {
+            audioSource.PlayOneShot(nice);
             Destroy(selectedCard1.gameObject);
             Destroy(selectedCard2.gameObject);
         }
         else
         {
+            audioSource.PlayOneShot(erro);
             selectedCard1.ResetCard();
             selectedCard2.ResetCard();
         }
